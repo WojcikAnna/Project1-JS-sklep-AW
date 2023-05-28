@@ -34,7 +34,7 @@
       <div class="cart">
         <button type = "button" id="cart-btn">
           <ion-icon class="btn-cart-icon" name="cart"></ion-icon>
-          <span id = "cart-count-info"></span>
+          <span id = "cart-count-info">0</span>
         </button>
       </div>
     </header>
@@ -51,7 +51,6 @@
 
       <section class="introduction">
         <div class="container center-text">
-          <span class="subheading">Jeszcze pracuję nad projektem do 20 maja</span>
           <h2 class="heading-secoundary">
             Stroje klubowe dla Mentorów, Instruktorów i Sympatyków
           </h2>
@@ -101,7 +100,7 @@
         </div>
       </section>
 
-      <!-- Sekcja z listą produktaów danej kategorii -->
+      <!-- Sekcja z listą produktaów danej kategorii + nagłówek -->
       <section class="section-product-list">
         <div class="container center-text">
           <h2 class="heading-secoundary">Koszulka Run Sympatyk Witalny</h2>
@@ -111,7 +110,7 @@
           <!-- rendering koszulki here-->
         </div>
       </section>
-      <!-- sekcja wiatówka grid 2-cols -->
+      <!-- sekcja wiatówka grid 2-cols + nagłówek -->
       <section class="section-product-list">
         <div class="container center-text">
           <h2 class="heading-secoundary">Wiatrówka Sympatyk Witalny</h2>
@@ -121,94 +120,140 @@
             <!-- rendering wiatrowki here-->
         </div>
       </section>
-     <!-- Sekcja z 4 klikalnymi obrazkami kategorii produktów-->
-     <section class="section-category-boxes">
-      <div class="container grid grid--4-cols">
-        <figure class="category-item">
+
+    <!-- sekcja single product -->
+    <section class="section-single-product">
+      <div class="container grid grid--2-cols">
+        <figure class="single-product">
           <img
-            src="/img/wiatrówka master mentor witalny11.jpg"
-            alt="kategoria dla mentoriw witalnych"
+            src="./img/krotkie-damskie-biala.jpg"
+            alt="koszulka mentoriw witalnych"
           />
-          <figcaption>dla mentorów vital academy</figcaption>
         </figure>
-        <figure class="category-item">
-          <img
-            src="/img/category-sympatyk-VA.jpg"
-            alt="kategoria dla sympatyków witalnych"
-          />
-          <figcaption>dla sympatyków vital academy</figcaption>
-        </figure>
-        <figure class="category-item">
-          <img
-            src="/img/koszulka slow jogging instruktror11.jpg"
-            alt="kategoria dla instruktorów slow joggingu"
-          />
-          <figcaption>dla instruktorów slow joggingu</figcaption>
-        </figure>
-        <figure class="category-item">
-          <img
-            src="/img/category-sympatyk-SJ.jpg"
-            alt="kategoria dla sympatyków slow joggingu"
-          />
-          <figcaption>dla sympatyków slow joggingu</figcaption>
-        </figure>
+        <div class="product-info">
+          <p class="product-title">Koszulka Filary Zdrowia</p>
+          <div class="product-tags">
+            <span class="tag tag--woman">Damska</span>
+          </div>
+          <p class="product-price">73,00zł</p>
+
+          <div class="product-features">
+            <ul class="list">
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                  ><span>technologia Dry Fit</span>
+                </li>
+                <li class="list-item">
+                  <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                    ><span>barwienie ekologiczne</span>
+                  </li>
+                  <li class="list-item">
+                    <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                      ><span>okrągły dekolt</span>
+                    </li>
+                    <li class="list-item">
+                      <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                        ><span>100% poliester</span>
+                      </li>
+                      <li class="list-item">
+                        <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                          ><span>Gramatura: 135 g/m²</span>
+                        </li>
+                      </ul>
+                    </div>
+
+            <p class="product-size">Wybrany rozmiar:</p>
+            <div class="units">
+              <div class="btn--size">XS</div>
+              <div class="btn--size">S</div>
+              <div class="btn--size">M</div>
+              <div class="btn--size">L</div>
+              <div class="btn--size">XL</div>  
+            </div>
+
+            <p class="product-color-title">Wybrany kolor:</p>
+            <div class="product-colors">
+            <div class="color"></div>
+            <div class="color color-black"></div>
+            <div class="color color-red"></div>
+            <div class="color color-orange"></div>
+            <div class="color color-green"></div>
+            <div class="color color-blue"></div>
+            <div class="color color-grey"></div>
+          </div>
+          <div class="kup-teraz-single-product">
+            <a href="#cart" class="btn btn--full">Kup teraz</a>
+          </div>
+        </div>
+        </div>
       </div>
+    </div>
     </section>
 
-      <!-- sekcja cart content layout shirt shop-->
-      <aside>
-    <div class="section-cart">
+      <!-- sekcja cart -->
+       <section class="section-cart" id="cart">
       <div class="container">
         <div class="cart-header cart-grid">
-          <div class="column1">Usuń</div>
-          <div class="column2">Zdjecie</div>
-          <div class="column3">Nazwa produktu</div>
-          <div class="column4">Ilość</div>
-          <div class="column5">Cena</div>
-          <div class="column6">Wartość</div>
+          <p>Zdjecie</p>
+          <p>Nazwa produktu</p>
+          <p>Ilość</p>
+          <p>Cena</p>
+          <p>Wartość</p>
+          <p>Usuń</p>
         </div>
-        <div class="cart-items">
+        <div class="cart-grid cart-items">
           <!-- render cart items here -->
-          <div class="cart-item cart-grid">
-            <div class="item-info">
+
+            <!-- <figure class="product-in-cart">
                 <img src="./img/VA RUN sympatyk.png" alt="koszulka">
-                <h4>Koszulka Filary Zdrowia</h4>
-            </div>
+              </figure>
+              <h4>Koszulka Filary Zdrowia</h4>
+              <div class="units">
+                  <div class="btn minus">-</div>
+                  <div class="number">1</div>
+                  <div class="btn plus">+</div>           
+              </div>
             <div class="unit-price">
                 <p class="price">73,00zł</p>
             </div>
-            <div class="units">
-                <div class="btn minus">-</div>
-                <div class="number">1</div>
-                <div class="btn plus">+</div>           
-            </div>
-        </div>
+            <div class="wartosc-div">
+              <p class="wartosc">73,00zł</p>
+          </div>
+          <button class="remove-from-cart">
+            <ion-icon class="icon-remove-from-cart" name="close-outline"></ion-icon>
+          </button> -->
 
-        <div class="cart-item cart-grid">
-          <div class="item-info">
-              <img src="./img/VA RUN sympatyk wzor 2 black.png" alt="koszulka">
-              <h4>Koszulka Mniej Znaczy Więcej</h4>
-          </div>
-          <div class="unit-price">
-              <p class="price">73,00zł</p>
-          </div>
+          <figure class="product-in-cart">
+            <img src="./img/VA RUN sympatyk M grafit.png" alt="koszulka">
+          </figure>
+          <h4>Koszulka Filary Zdrowia</h4>
           <div class="units">
               <div class="btn minus">-</div>
               <div class="number">1</div>
               <div class="btn plus">+</div>           
           </div>
+        <div class="unit-price">
+            <p class="price">73,00zł</p>
+        </div>
+        <div class="wartosc-div">
+          <p class="wartosc">73,00zł</p>
       </div>
+      <button class="remove-from-cart">
+        <ion-icon class="icon-remove-from-cart" name="close-outline"></ion-icon>
+      </button>
 
         </div>
+        
         <div class="cart-footer">
-          <p class="cart-total">Suma zamówienia (0 produktów): 0 zł</p>
-          <div class="kup-teraz">
-            <a href="#" class="btn btn--full checkout">Dokończ zamówienie</a>
+            <div class="subtotal">
+            <p class="cart-total">Suma zamówienia (0 produktów): 0 zł</p>
+            <a href="#" class="btn btn--full">Dokończ zamówienie</a>
           </div>
         </div>
+
+        </div>
       </div>
-    </div>
-      </aside>
+    </section>
     </main>
 
     <footer class="footer">

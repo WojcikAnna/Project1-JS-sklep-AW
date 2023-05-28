@@ -1,12 +1,12 @@
-const koszulki = [
+const products = [
   {
     id: 0,
     productKategory: "Koszulka Run Sympatyk Witalny",
     productTag: "Damska",
     name: "Koszulka Filary Zdrowia",
-    price: "73,00zł",
-    imgSrc: "./img/VA RUN sympatyk.png",
-    instock: "100",
+    price: "73,00",
+    imgSrc: "./img/krotkie-damskie-biala.jpg",
+    instock: 100,
   },
 
   {
@@ -14,8 +14,8 @@ const koszulki = [
     productKategory: "Koszulka Run Sympatyk Witalny",
     productTag: "Damska",
     name: "Koszulka Mniej Znaczy Więcej",
-    price: "73,00zł",
-    imgSrc: "./img/VA RUN sympatyk wzor 2 black.png",
+    price: "73,00",
+    imgSrc: "./img/krotkie-damskie-czarna-2.jpg",
     instock: "5",
   },
 
@@ -24,8 +24,8 @@ const koszulki = [
     productKategory: "Koszulka Run Sympatyk Witalny",
     productTag: "Męska",
     name: "Koszulka Filary Zdrowia",
-    price: "73,00zł",
-    imgSrc: "./img/VA RUN sympatyk M.png",
+    price: "73,00",
+    imgSrc: "./img/krotkie-meskie-czerwona.jpg",
     instock: "10",
   },
 
@@ -34,8 +34,8 @@ const koszulki = [
     productKategory: "Koszulka Run Sympatyk Witalny",
     productTag: "Męska",
     name: "Koszulka Mniej Znaczy Więcej",
-    price: "73,00zł",
-    imgSrc: "./img/VA RUN sympatyk M wzor 2.png",
+    price: "73,00",
+    imgSrc: "./img/krotkie-meskie-pomaranczowa.jpg",
     instock: "3",
   },
 
@@ -44,8 +44,8 @@ const koszulki = [
     productKategory: "Koszulka Run Sympatyk Witalny",
     productTag: "Damska",
     name: "Koszulka Filary Zdrowia",
-    price: "73,00zł",
-    imgSrc: "./img/VA RUN sympatyk D ziel.png",
+    price: "73,00",
+    imgSrc: "./img/krotkie-damskie-zielona.jpg",
     instock: "50",
   },
 
@@ -54,8 +54,8 @@ const koszulki = [
     productKategory: "Koszulka Run Sympatyk Witalny",
     productTag: "Damska",
     name: "Koszulka Mniej Znaczy Więcej",
-    price: "73,00zł",
-    imgSrc: "./img/VA RUN sympatyk D zolta.png",
+    price: "73,00",
+    imgSrc: "./img/krotkie-damskie-zolta.jpg",
     instock: "5",
   },
 
@@ -64,8 +64,8 @@ const koszulki = [
     productKategory: "Koszulka Run Sympatyk Witalny",
     productTag: "Męska",
     name: "Koszulka Filary Zdrowia",
-    price: "73,00zł",
-    imgSrc: "./img/VA RUN sympatyk M granat.png",
+    price: "73,00",
+    imgSrc: "./img/krotkie-meskie-niebieska.jpg",
     instock: "10",
   },
 
@@ -74,50 +74,48 @@ const koszulki = [
     productKategory: "Koszulka Run Sympatyk Witalny",
     productTag: "Męska",
     name: "Koszulka Mniej Znaczy Więcej",
-    price: "73,00zł",
-    imgSrc: "./img/VA RUN sympatyk M grafit.png",
+    price: "73,00",
+    imgSrc: "./img/krotkie-meskie-grafit.jpg",
     instock: "3",
   },
-];
 
-const wiatrowki = [
   {
-    id: 0,
+    id: 8,
     productKategory: "Wiatrówka Sympatyk Witalny",
     productTag: "Damska",
     name: "Wiatrówka Sympatyk witalny",
-    price: "145,00zł",
-    imgSrc: "./img/wiatrówka damska.png",
+    price: "145,00",
+    imgSrc: "./img/kurtka-damskaVA-granat.jpeg",
     instock: "100",
   },
 
   {
-    id: 1,
+    id: 9,
     productKategory: "Wiatrówka Sympatyk Witalny",
     productTag: "Męska",
     name: "Wiatrówka Sympatyk witalny",
-    price: "145,00zł",
-    imgSrc: "./img/wiatrówka MĘSKA.png",
+    price: "145,00",
+    imgSrc: "./img/kurtka-meska-VA-ziel.jpeg",
     instock: "5",
   },
 
   {
-    id: 2,
+    id: 10,
     productKategory: "Wiatrówka Sympatyk Witalny",
     productTag: "Damska",
     name: "Wiatrówka Sympatyk witalny",
-    price: "145,00zł",
-    imgSrc: "./img/wiatrowka sympatyk witalny damska czarna.png",
+    price: "145,00",
+    imgSrc: "./img/kurtka-damskaVA-czarna.jpeg",
     instock: "10",
   },
 
   {
-    id: 3,
+    id: 11,
     productKategory: "Wiatrówka Sympatyk Witalny",
     productTag: "Męska",
     name: "Wiatrówka Sympatyk witalny",
-    price: "145,00zł",
-    imgSrc: "./img/wiatrowka sympatyk witalny pomarancz.png",
+    price: "145,00",
+    imgSrc: "./img/kurtka-meska-VA-pomaranczowa.jpeg",
     instock: "3",
   },
 ];

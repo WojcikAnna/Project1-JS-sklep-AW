@@ -1,14 +1,18 @@
-console.log("Hello World!");
+// console.log("Hello World!");
 
 // SELECT ELEMENTS//
+// const $products = document.querySelector(".products");
 const $koszulki = document.querySelector(".koszulki");
 const $wiatrowki = document.querySelector(".wiatrowki");
 const $cartItems = document.querySelector(".cart-items");
+const $subtotal = document.querySelector(".cart-total");
+const $cartCountInfo = document.querySelector("#cart-count-info");
 
 // RENDER PRODUCTS IN SHOP PAGE
 function renderKoszulki() {
-  koszulki.forEach((product) => {
-    $koszulki.innerHTML += `
+  products.forEach((product) => {
+    if (product.productKategory === "Koszulka Run Sympatyk Witalny")
+      $koszulki.innerHTML += `
     <div class="product">
 <div class="product-img-box">
   <img
@@ -24,9 +28,9 @@ function renderKoszulki() {
     }">${product.productTag}</span>
   </div>
   <p class="product-title">${product.name}</p>
-  <p class="product-price">${product.price}</p>
+  <p class="product-price">${product.price}zł</p>
   <div class="kup-teraz" onclick="addToCart(${product.id})">
-    <a href="#" class="btn btn--full">Kup teraz</a>
+    <a href="#cart" class="btn btn--full">Kup teraz</a>
   </div>
 </div>
 </div>`;
@@ -35,8 +39,9 @@ function renderKoszulki() {
 renderKoszulki();
 
 function renderWiatrowki() {
-  wiatrowki.forEach((product) => {
-    $wiatrowki.innerHTML += `
+  products.forEach((product) => {
+    if (product.productKategory === "Wiatrówka Sympatyk Witalny")
+      $wiatrowki.innerHTML += `
     <div class="product">
 <div class="product-img-box">
   <img
@@ -52,9 +57,9 @@ function renderWiatrowki() {
     }">${product.productTag}</span>
   </div>
   <p class="product-title">${product.name}</p>
-  <p class="product-price">${product.price}</p>
+  <p class="product-price">${product.price}zł</p>
   <div class="kup-teraz" onclick="addToCart(${product.id})">
-    <a href="#" class="btn btn--full">Kup teraz</a>
+    <a href="#cart" class="btn btn--full">Kup teraz</a>
   </div>
 </div>
 </div>`;
@@ -63,51 +68,111 @@ function renderWiatrowki() {
 renderWiatrowki();
 
 // ADD PRODUCT TO CART
-let cart = [];
+let cart = JSON.parse(localStorage.getItem("CART")) || [];
+updateCart();
 
 function addToCart(id) {
-  // console.log(id);
-  // check if prodcut already exist in cart
+  // check if prodcut is already in cart
   if (cart.some((item) => item.id === id)) {
-    alert("Product already in cart");
+    // alert("Product already in cart");
+    changeNumberOfUnits("plus", id);
   } else {
-    const item = koszulki.find((product) => product.id === id);
-    // console.log(item);
-    // cart.push(item);
+    const item = products.find((product) => product.id === id);
+
     cart.push({
       ...item,
-      numberofUnits: 1,
+      numberOfUnits: 1,
     });
-    // console.log(cart);
   }
+
   updateCart();
 }
 
+// UPDATE CART
 function updateCart() {
   renderCartItems();
   renderSubtotal();
+
+  //SAVE CART TO LOCAL STORAGE
+  localStorage.setItem("CART", JSON.stringify(cart));
 }
 
+function numberek(cena) {
+  // cena === '73,00'
+  return Number(cena.replace(",", "."));
+}
+
+//CALCULATE AND RENDER SUBTOTAL IN CART
+function renderSubtotal() {
+  let totalPrice = 0,
+    totalItems = 0;
+
+  cart.forEach((item) => {
+    totalPrice += numberek(item.price) * item.numberOfUnits;
+    totalItems += item.numberOfUnits;
+  });
+
+  let totalcena = `${totalPrice.toFixed(2)}`;
+  totalcena = totalcena.replace(".", ",");
+
+  $subtotal.innerHTML = `
+  Suma zamówienia (${totalItems} szt.): (${totalcena} zł)`;
+  $cartCountInfo.innerHTML = totalItems;
+}
+
+// RENDER CART ITEMS
 function renderCartItems() {
-  // $cartItems.innerHTML = ""; //clear cart element
+  $cartItems.innerHTML = ""; //clear cart element
   cart.forEach((item) => {
     $cartItems.innerHTML += `
-    <div class="cart-item">
-    <div class="item-info">
+      <figure class="product-in-cart">
         <img src="${item.imgSrc}" alt="${item.name}">
-        <h4>${item.name}</h4>
-    </div>
-    <div class="unit-price">
+      </figure>
+      <h4>${item.name}</h4>
+      <div class="units">
+        <div class="btn minus" onclick="changeNumberOfUnits('minus', ${item.id})">-</div>
+        <div class="number">${item.numberOfUnits}</div>
+        <div class="btn plus" onclick="changeNumberOfUnits('plus', ${item.id})">+</div>           
+      </div>
+      <div class="unit-price">
         <p class="price">${item.price}</p>
-    </div>
-    <div class="units">
-        <div class="btn minus">-</div>
-        <div class="number">${item.numberofUnits}</div>
-        <div class="btn plus">+</div>           
-    </div>
-</div>
+      </div>
+      <div class="wartosc-div">
+        <p class="wartosc">${item.price}</p>
+      </div>
+      <button class="remove-from-cart" onclick="removeItemFromCart(${item.id})">
+        <ion-icon class="icon-remove-from-cart" name="close-outline"></ion-icon>
+      </button>
     `;
   });
+}
+
+//REMOVE ITEM FROM CART
+function removeItemFromCart(id) {
+  cart = cart.filter((item) => item.id !== id);
+
+  updateCart();
+}
+//CHANGE NO OF UNITS FOR AN ITEM IN CART
+function changeNumberOfUnits(action, id) {
+  cart = cart.map((item) => {
+    let oldNumberOfUnits = item.numberOfUnits;
+
+    if (item.id === id) {
+      if (action === "minus" && item.numberOfUnits > 1) {
+        oldNumberOfUnits--;
+      } else if (action === "plus" && item.numberOfUnits < item.instock) {
+        oldNumberOfUnits++;
+      }
+    }
+
+    return {
+      ...item,
+      numberOfUnits: oldNumberOfUnits,
+    };
+  });
+
+  updateCart();
 }
 
 //SETING CURRENT YEAR IN FOOTER//
