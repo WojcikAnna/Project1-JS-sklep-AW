@@ -6,7 +6,7 @@ const products = [
     name: "Koszulka Filary Zdrowia",
     price: "73,00",
     imgSrc: "./img/krotkie-damskie-biala.jpg",
-    instock: 100,
+    instock: "100",
   },
 
   {

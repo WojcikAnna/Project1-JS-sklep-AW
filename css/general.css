@@ -6,16 +6,15 @@
 
 html {
   font-size: 62.5%;
-  /* overflow-x: hidden; to do menu mobilnego */
 }
 
 body {
+  position: relative;
   font-family: "Rubik", sans-serif;
   font-size: 1.6rem;
   line-height: 1.3;
   font-weight: 400;
   color: #555;
-  /* overflow-x: hidden; */
 }
 
 .container {
@@ -45,10 +44,6 @@ body {
 .grid--4-cols {
   grid-template-columns: repeat(4, 1fr);
 }
-
-/* .grid--center-v {
-  align-items: center;
-} */
 
 .heading-secoundary {
   font-size: 3rem;

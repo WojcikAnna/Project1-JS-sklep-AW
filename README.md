@@ -2,7 +2,7 @@
 
 "Sklep strojów klubowych" is an initial-stage demo of future e-commere web app for Stowarzyszenie Slow Jogging Polska
 
-This is a vanilla JS project as final work in WSB.
+This is a vanilla JS project as final project during WSB postgraduate studies.
 
 ## Technologies used
 
@@ -11,8 +11,7 @@ This project was performed using HTML, CSS and JS.
 ## Development server
 
 You can use live server build in VSC or npm.
-Files are on GitHub repository at https://github.com/WojcikAnna/Project1-JS-sklep-AW.git
-and also hosted on Netlify at https://project-js-sklep-ubran-sport-aw.netlify.app/
+Files are also hosted on Netlify at https://project-js-sklep-ubran-sport-aw.netlify.app/
 
 ### Project walk around
 
@@ -29,5 +28,3 @@ Products in cart array are strored in local storage obcject using method setItem
 and getItem and JSON.parse to load saved cart array.
 
 There are still many products and functionalities to be added and I will work on them during futher learning of JS.
-Front-end postgraduate studies at WSB gave me a lot and I'm convinced that now it would be much easier to learn and practice JS on my own.
-It was great journey!

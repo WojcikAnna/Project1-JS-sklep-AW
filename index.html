@@ -31,12 +31,12 @@
         <div>MENU</div>
       </nav>
 
-      <div class="cart">
+      <a href="#cart"><div class="cart">
         <button type = "button" id="cart-btn">
           <ion-icon class="btn-cart-icon" name="cart"></ion-icon>
           <span id = "cart-count-info">0</span>
         </button>
-      </div>
+      </div></a>
     </header>
 
     <main>
@@ -121,74 +121,12 @@
         </div>
       </section>
 
-    <!-- sekcja single product -->
-    <section class="section-single-product">
-      <div class="container grid grid--single-product">
-        <figure class="single-product">
-          <img
-            src="./img/krotkie-damskie-biala.jpg"
-            alt="koszulka mentoriw witalnych"
-          />
-        </figure>
-        <div class="product-info">
-          <p class="product-title">Koszulka Filary Zdrowia</p>
-          <div class="product-tags">
-            <span class="tag tag--woman">Damska</span>
-          </div>
-          <p class="product-price">73,00zł</p>
-
-          <div class="product-features">
-            <ul class="list">
-              <li class="list-item">
-                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
-                  ><span>technologia Dry Fit</span>
-                </li>
-                <li class="list-item">
-                  <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
-                    ><span>barwienie ekologiczne</span>
-                  </li>
-                  <li class="list-item">
-                    <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
-                      ><span>okrągły dekolt</span>
-                    </li>
-                    <li class="list-item">
-                      <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
-                        ><span>100% poliester</span>
-                      </li>
-                      <li class="list-item">
-                        <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
-                          ><span>Gramatura: 135 g/m²</span>
-                        </li>
-                      </ul>
-                    </div>
-
-            <p class="product-size">Wybrany rozmiar:</p>
-            <div class="units">
-              <div class="btn--size">XS</div>
-              <div class="btn--size">S</div>
-              <div class="btn--size">M</div>
-              <div class="btn--size">L</div>
-              <div class="btn--size">XL</div>  
-            </div>
-
-            <p class="product-color-title">Wybrany kolor:</p>
-            <div class="product-colors">
-            <div class="color"></div>
-            <div class="color color-black"></div>
-            <div class="color color-red"></div>
-            <div class="color color-orange"></div>
-            <div class="color color-green"></div>
-            <div class="color color-blue"></div>
-            <div class="color color-grey"></div>
-          </div>
-          <div class="kup-teraz-single-product">
-            <a href="#cart" class="btn btn--full">Kup teraz</a>
-          </div>
-        </div>
-        </div>
+      <!-- sekcja single product -->
+      <section class="section-single-product">
+        <div class="container single grid grid--single-product">
+          <!-- rendering single product here-->
       </div>
-    </div>
-    </section>
+      </section>
 
       <!-- sekcja cart -->
        <section class="section-cart" id="cart">
