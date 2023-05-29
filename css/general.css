@@ -82,6 +82,8 @@ body {
   background-color: #024880;
   color: #fff;
   font-size: 1.4rem;
+  text-transform: uppercase;
+  text-align: center;
   font-weight: 600;
   padding: 0.6rem 1.8rem;
   border-radius: 100px;

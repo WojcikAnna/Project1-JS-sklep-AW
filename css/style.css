@@ -197,6 +197,10 @@ buttons border-radius 4px */
   padding: 4rem 0 4rem 0;
 }
 
+.grid--single-product {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .list {
   list-style: none;
   display: flex;
@@ -354,8 +358,3 @@ ion-icon.icon-remove-from-cart {
   font-size: 1.6rem;
   font-weight: 500;
 }
-
-/* .kup-teraz.btn.btn--full {
-  padding: 0.8rem 1.8rem;
-} */
-/*zmienić czionkę buttona DOKOŃCZ ZAMÓWIENIA na większą */

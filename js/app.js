@@ -1,7 +1,7 @@
 // console.log("Hello World!");
 
 // SELECT ELEMENTS//
-// const $products = document.querySelector(".products");
+
 const $koszulki = document.querySelector(".koszulki");
 const $wiatrowki = document.querySelector(".wiatrowki");
 const $cartItems = document.querySelector(".cart-items");
@@ -97,7 +97,7 @@ function updateCart() {
   localStorage.setItem("CART", JSON.stringify(cart));
 }
 
-function numberek(cena) {
+function priceFormatting(cena) {
   // cena === '73,00'
   return Number(cena.replace(",", "."));
 }
@@ -108,7 +108,7 @@ function renderSubtotal() {
     totalItems = 0;
 
   cart.forEach((item) => {
-    totalPrice += numberek(item.price) * item.numberOfUnits;
+    totalPrice += priceFormatting(item.price) * item.numberOfUnits;
     totalItems += item.numberOfUnits;
   });
 
@@ -135,10 +135,10 @@ function renderCartItems() {
         <div class="btn plus" onclick="changeNumberOfUnits('plus', ${item.id})">+</div>           
       </div>
       <div class="unit-price">
-        <p class="price">${item.price}</p>
+        <p class="price">${item.price}zł</p>
       </div>
       <div class="wartosc-div">
-        <p class="wartosc">${item.price}</p>
+        <p class="wartosc">${item.price}zł</p>
       </div>
       <button class="remove-from-cart" onclick="removeItemFromCart(${item.id})">
         <ion-icon class="icon-remove-from-cart" name="close-outline"></ion-icon>
